@@ -34,10 +34,12 @@ class Content extends Component {
   render(){
     return (
       <div style={this.styles.root}>
-        <AppBar position="static" color="default">
+        <AppBar position="static" color="inherit">
           <Toolbar>
-            <IconButton style={this.styles.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon onClick={this.handler.toggleDrawer()}/>
+            <IconButton style={this.styles.menuButton}
+                        color="inherit" aria-label="Menu"
+                        onClick={this.handler.toggleDrawer()}>
+              <MenuIcon/>
             </IconButton>
             <Typography variant="title" color="inherit" style={this.styles.flex}>
               {this.state.title}
@@ -59,8 +61,7 @@ class KataAppbar extends Component {
   }
 
   toggleDrawer=()=>()=>{
-    console.log("Change to true");
-    this.setState({isDrawerOpened: true});
+    this.setState({isDrawerOpened: !this.state.isDrawerOpened});
   }
 
   render() {

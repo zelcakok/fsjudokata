@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class Content extends Component {
   render(){
     return (
-      <div>This area shows 7 katas in grid form.</div>
+      <div>Nage no kata</div>
     )
   }
 }
 
-class Main extends Component {
+class NageNoKata extends Component {
   render() {
     return (
       <div style={{padding:"10px"}}>
@@ -18,4 +18,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default NageNoKata;

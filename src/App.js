@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <KataAppbar title="Kata Guide"/>
+        <KataAppbar title="Kata Manual"/>
         <Main/>
       </div>
     );
