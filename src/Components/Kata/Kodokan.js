@@ -3,19 +3,19 @@ import React, { Component } from 'react';
 class Content extends Component {
   render(){
     return (
-      <div>Nage no kata</div>
+      <div>Kodokan-Goshin-jutsu</div>
     )
   }
 }
 
-class NageNoKata extends Component {
+class Kodokan extends Component {
   constructor(props){
     super(props);
     this.handler = props.handler;
   }
 
   componentDidMount(){
-    this.handler.changeTitle("投の形 Nage-no-Kata");
+    this.handler.changeTitle("講道館護身術 Kodokan-Goshin-jutsu");
   }
 
   render() {
@@ -27,4 +27,4 @@ class NageNoKata extends Component {
   }
 }
 
-export default NageNoKata;
+export default Kodokan;

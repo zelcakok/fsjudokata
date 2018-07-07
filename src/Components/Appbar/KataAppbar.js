@@ -18,17 +18,27 @@ class Content extends Component {
       root: {
         flexGrow: 1,
       },
-      flex: {
+      title: {
         flex: 1,
+        cursor: "pointer",
+        userSelect:"none"
       },
       menuButton: {
         marginLeft: -15,
       },
     }
-    this.state = {
-      title: props.title!=null? props.title : "NULL",
-    }
     this.handler = props.handler;
+    this.state = {
+      title: "形 Kata",
+    }
+  }
+
+  home=()=>()=>{
+    window.location = "/";
+  }
+
+  changeTitle=(title)=>{
+    this.setState({title:title});
   }
 
   render(){
@@ -41,7 +51,10 @@ class Content extends Component {
                         onClick={this.handler.toggleDrawer()}>
               <MenuIcon/>
             </IconButton>
-            <Typography variant="title" color="inherit" style={this.styles.flex}>
+            <Typography variant="title"
+                        color="inherit"
+                        style={this.styles.title}
+                        onClick={this.home()}>
               {this.state.title}
             </Typography>
           </Toolbar>
@@ -55,19 +68,24 @@ class KataAppbar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      title: props.title!=null? props.title : "NULL",
+      title: "形 Kata",
       isDrawerOpened: false
     }
+    this.content = React.createRef();
   }
 
   toggleDrawer=()=>()=>{
     this.setState({isDrawerOpened: !this.state.isDrawerOpened});
   }
 
+  changeTitle=(title)=>{
+    this.content.current.changeTitle(title);
+  }
+
   render() {
     return (
       <div>
-        <Content title={this.state.title} handler={this}/>
+        <Content title={this.state.title} handler={this} ref={this.content}/>
         <LeftDrawer handler={this}/>
       </div>
     )
