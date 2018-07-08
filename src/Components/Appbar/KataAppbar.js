@@ -5,7 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import HomeIcon from '@material-ui/icons/Home';
+import Tooltip from '@material-ui/core/Tooltip';
 import LeftDrawer from './LeftDrawer';
 
 class Content extends Component {
@@ -56,6 +57,13 @@ class Content extends Component {
                         onClick={this.home()}>
               {this.state.title}
             </Typography>
+            <Tooltip title="Home">
+              <IconButton style={this.styles.menuButton}
+                          color="inherit" aria-label="Menu"
+                          onClick={this.home()}>
+                <HomeIcon/>
+              </IconButton>
+            </Tooltip>
           </Toolbar>
         </AppBar>
       </div>
