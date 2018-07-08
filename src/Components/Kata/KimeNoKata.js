@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography';
 
 class Content extends Component {
   render(){
     return (
-      <div>Kime no kata</div>
+      <Typography variant="display1" component="h1" style={{textAlign:"center", marginTop:"10%"}}>
+        Working on it....
+      </Typography>
     )
   }
 }

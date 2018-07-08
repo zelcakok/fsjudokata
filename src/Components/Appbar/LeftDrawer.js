@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import HomeIcon from '@material-ui/icons/Home';
 import LinkIcon from '@material-ui/icons/Link';
-import Button from '@material-ui/core/Button';
 
 class KataList extends Component {
   constructor(props){
@@ -37,7 +32,7 @@ class KataList extends Component {
         break;
       }
       case "kami": {
-        window.location = "/極の形-Kami-no-Kata"
+        window.location = "/極の形-Kime-no-Kata"
         break;
       }
       case "ju": {
@@ -56,6 +51,7 @@ class KataList extends Component {
         window.location = "/古式の形-Koshiki-no-Kata"
         break;
       }
+      default:
     }
   }
 

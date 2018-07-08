@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-import Button from '@material-ui/core/Button';
-import HomeIcon from '@material-ui/icons/Home';
 
 //Import Components
 import KataAppbar from "./Components/Appbar/KataAppbar";
@@ -21,9 +17,7 @@ import ErrorPage from './Components/ErrorPage';
 
 import {
   BrowserRouter as Router,
-  StaticRouter, // for server rendering
   Route,
-  Link,
   Switch
 } from 'react-router-dom'
 
@@ -50,7 +44,7 @@ class App extends Component {
             <Route exact path="/" render={()=><Main handler={this}/>}/>
             <Route exact path="/投の形-Nage-no-Kata" render={()=><NageNoKata handler={this}/>}/>
             <Route exact path="/固の形-Katame-no-Kata" render={()=><KatameNoKata handler={this}/>}/>
-            <Route exact path="/極の形-Kami-no-Kata" render={()=><KimeNoKata handler={this}/>}/>
+            <Route exact path="/極の形-Kime-no-Kata" render={()=><KimeNoKata handler={this}/>}/>
             <Route exact path="/柔の形-Ju-no-Kata" render={()=><JuNoKata handler={this}/>}/>
             <Route exact path="/講道館護身術-Kodokan-Goshin-jutsu" render={()=><Kodokan handler={this}/>}/>
             <Route exact path="/五の形-Itsutsu-no-Kata" render={()=><Itsutsu handler={this}/>}/>

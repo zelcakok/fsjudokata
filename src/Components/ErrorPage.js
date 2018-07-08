@@ -28,7 +28,7 @@ class ErrorPage extends Component {
   render(){
     return (
       <div style={{padding:"10px"}}>
-        <img style={{width: this.state.picSize, height: this.state.picSize}} src={errPic}/>
+        <img style={{width: this.state.picSize, height: this.state.picSize}} src={errPic} alt="404 Error"/>
       </div>
     )
   }

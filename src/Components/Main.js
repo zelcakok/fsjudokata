@@ -5,9 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import YouTube from 'react-youtube-embed'
+import YouTube from 'react-youtube-embed';
 import Typography from '@material-ui/core/Typography';
-import blue from '@material-ui/core/colors/blue';
 
 class Content extends Component {
   constructor(props){
@@ -21,13 +20,13 @@ class Content extends Component {
       }
     }
     this.kataList = [
-      {title:"投の形 Nage-no-Kata",videoId:"-Qe_JKQjJTA"},
-      {title:"固の形 Katame-no-Kata",videoId:"qS0B7w1yEWM"},
-      {title:"極の形 Kime-no-Kata",videoId:"rL1uTmtiZ_s"},
-      {title:"柔の形 Ju-no-Kata",videoId:"6as00smPXRU"},
-      {title:"講道館護身術 Kodokan Goshin-jutsu",videoId:"t9sV9WUdh6E"},
-      {title:"五の形 Itsutsu-no-Kata",videoId:"925Ss8u5QqE"},
-      {title:"古式の形 Koshiki-no-Kata",videoId:"lfYtoyS9XOQ"},
+      {title:"投の形 Nage-no-Kata",videoId:"-Qe_JKQjJTA",link:"/投の形-Nage-no-Kata"},
+      {title:"固の形 Katame-no-Kata",videoId:"qS0B7w1yEWM",link:"/固の形-Katame-no-Kata"},
+      {title:"極の形 Kime-no-Kata",videoId:"rL1uTmtiZ_s",link:"/極の形-Kime-no-Kata"},
+      {title:"柔の形 Ju-no-Kata",videoId:"6as00smPXRU",link:"/柔の形-Ju-no-Kata"},
+      {title:"講道館護身術 Kodokan Goshin-jutsu",videoId:"t9sV9WUdh6E",link:"/講道館護身術-Kodokan-Goshin-jutsu"},
+      {title:"五の形 Itsutsu-no-Kata",videoId:"925Ss8u5QqE",link:"/五の形-Itsutsu-no-Kata"},
+      {title:"古式の形 Koshiki-no-Kata",videoId:"lfYtoyS9XOQ",link:"/古式の形-Koshiki-no-Kata"},
     ]
   }
 
@@ -50,8 +49,11 @@ class Content extends Component {
     return 12;
   }
 
-  render(){
+  browse=(url)=>()=>{
+    window.location = url;
+  }
 
+  render(){
     return (
       <div>
         <Grid container spacing={24}>
@@ -69,7 +71,7 @@ class Content extends Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button color="primary">Details</Button>
+                      <Button color="primary" onClick={this.browse(item.link)}>Details</Button>
                     </CardActions>
                   </Card>
                 </Grid>
