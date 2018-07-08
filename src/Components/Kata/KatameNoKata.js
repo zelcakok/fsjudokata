@@ -170,9 +170,12 @@ class Content extends Component {
   }
 
   onChange(e){
-    var videoId = this.wazaList[this.state.waza].videoId;
-    var tech = this.wazaList[this.state.waza].techniques[e.target.value];
-    this.seek(videoId, tech.seekTo, tech.end);
+    if(e.target.value.length < 1) return;
+    this.setState({selTechnique:e.target.value}, ()=>{
+      var videoId = this.wazaList[this.state.waza].videoId;
+      var tech = this.wazaList[this.state.waza].techniques[e.target.value];
+      this.seek(videoId, tech.seekTo, tech.end);
+    });
   }
 
   render(){
