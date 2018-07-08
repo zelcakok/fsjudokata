@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "形 Kata",
+  "name": "A judo kata handbook for judoka.",
   "icons": [
     {
       "src": "favicon.ico",
