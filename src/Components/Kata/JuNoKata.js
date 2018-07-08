@@ -19,7 +19,7 @@ class Content extends Component {
       waza:0,
       seekTo:0,
       end:0,
-      selTechnique:0
+      selTechnique:""
     }
     this.wazaList = [
       {
@@ -133,13 +133,13 @@ class Content extends Component {
   }
 
   wazaNext=()=>{
-    if(this.state.waza<5)
-      this.setState({waza:this.state.waza+1});
+    if(this.state.waza<this.wazaList.length-1)
+      this.setState({waza:this.state.waza+1, selTechnique:""});
   }
 
   wazaPrev=()=>{
     if(this.state.waza>0)
-      this.setState({waza:this.state.waza-1});
+      this.setState({waza:this.state.waza-1, selTechnique:""});
   }
 
   seekTo=(time)=>{
@@ -216,7 +216,11 @@ class Content extends Component {
                                 </Button>
                               )
                             }) :
-                            <Select value={this.state.selTechnique} onChange={this.onChange.bind(this)}>
+                            <Select value={this.state.selTechnique}
+                                    onChange={this.onChange.bind(this)}
+                                    displayEmpty
+                                    name="Select">
+                                    <MenuItem value="">Please select</MenuItem>
                               {
                                 wazaItem.techniques.map((techniques,i)=>{
                                   return(

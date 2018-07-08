@@ -11,7 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import YouTube from '@u-wave/react-youtube';
-import FormControl from '@material-ui/core/FormControl';
 
 class Content extends Component {
   constructor(props){
@@ -146,13 +145,13 @@ class Content extends Component {
   }
 
   wazaNext=()=>{
-    if(this.state.waza<5)
-      this.setState({waza:this.state.waza+1});
+    if(this.state.waza<this.wazaList.length-1)
+      this.setState({waza:this.state.waza+1, selTechnique:""});
   }
 
   wazaPrev=()=>{
     if(this.state.waza>0)
-      this.setState({waza:this.state.waza-1});
+      this.setState({waza:this.state.waza-1, selTechnique:""});
   }
 
   seekTo=(time)=>{
@@ -187,7 +186,7 @@ class Content extends Component {
       var videoId = this.wazaList[this.state.waza].videoId;
       var tech = this.wazaList[this.state.waza].techniques[e.target.value];
       this.seek(videoId, tech.seekTo, tech.end);
-    });    
+    });
   }
 
   render(){
@@ -231,12 +230,11 @@ class Content extends Component {
                                 </Button>
                               )
                             }) :
-                            <FormControl>
                             <Select value={this.state.selTechnique}
                                     onChange={this.onChange.bind(this)}
                                     displayEmpty
                                     name="Select">
-                              <MenuItem value="">Please select</MenuItem>
+                                    <MenuItem value="">Please select</MenuItem>
                               {
                                 wazaItem.techniques.map((techniques,i)=>{
                                   return(
@@ -247,7 +245,6 @@ class Content extends Component {
                                 })
                               }
                             </Select>
-                            </FormControl>
                         }
                       </CardActions>
                     </Card>
